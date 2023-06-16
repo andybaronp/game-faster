@@ -8,13 +8,13 @@ const Timer = ({
   time,
   setStatus,
   viewConfetti,
-  setScore,
+
   dificult,
 }: PropsTimer) => {
   //incremental time
   useEffect(() => {
     if (time === 0) {
-      finishGame({ setTime, setStatus, viewConfetti, setScore, dificult })
+      finishGame({ setTime, setStatus, viewConfetti, dificult })
     }
     if (status === 'playing') {
       const interval = setInterval(() => {
@@ -25,7 +25,7 @@ const Timer = ({
         clearInterval(interval)
       }
     }
-  }, [status, setTime, setStatus, time, viewConfetti, setScore, dificult])
+  }, [status, setTime, setStatus, time, viewConfetti, dificult])
 
   return <div>{time} segundos</div>
 }

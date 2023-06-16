@@ -104,7 +104,6 @@ function ColorPage() {
                 time={time}
                 setTime={setTime}
                 setStatus={setStatus}
-                setScore={setScore}
               />
             </>
           )}

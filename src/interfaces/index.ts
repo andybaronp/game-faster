@@ -21,7 +21,6 @@ export interface PropsTimer {
   time: number
   dificult: 'normal' | 'medium' | 'hard'
   setTime: React.Dispatch<React.SetStateAction<number>>
-  setScore: React.Dispatch<React.SetStateAction<number>>
   setStatus: React.Dispatch<
     React.SetStateAction<'initial' | 'playing' | 'finish'>
   >
@@ -32,7 +31,6 @@ export interface GameFunctions {
   dificult: 'normal' | 'medium' | 'hard'
 
   setTime: React.Dispatch<React.SetStateAction<number>>
-  setScore: React.Dispatch<React.SetStateAction<number>>
   setStatus: React.Dispatch<
     React.SetStateAction<'initial' | 'playing' | 'finish'>
   >
