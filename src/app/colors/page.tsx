@@ -23,11 +23,11 @@ const viewConfetti = () => {
   })
 }
 
-function Home() {
+function ColorPage() {
   const [status, setStatus] = useState<'initial' | 'playing' | 'finish'>(
     'initial',
   )
-  const name = 'Andy'
+  const name = localStorage.getItem('name')
   const [dificult, setDificult] = useState<'normal' | 'medium' | 'hard'>(
     'normal',
   )
@@ -80,12 +80,15 @@ function Home() {
   if (hidden === '') return <ModalName setHidden={setHidden} hidden={hidden} />
 
   return (
-    <div className='container flex flex-col items-center justify-between flex-grow px-3 py-6 pb-24 mx-auto bg-slate-700 '>
+    <section className='flex flex-col items-center justify-between h-full p-3 '>
       <nav className='flex flex-col flex-wrap items-center justify-center gap-5 sm:gap-20 sm:flex-row'>
         {status === 'playing' && (
           <button
             className='px-3 py-1 text-sm font-medium delay-150 rounded-md bg-cyan-400 hover:scale-105 hover:bg-yellow-400'
-            onClick={() => setStatus('initial')}
+            onClick={() => {
+              setScore(0)
+              setStatus('initial')
+            }}
           >
             Reiniciar
           </button>
@@ -95,11 +98,13 @@ function Home() {
             <>
               <Score score={score} key={score} />
               <Timer
+                dificult={dificult}
                 viewConfetti={viewConfetti}
                 status={status}
                 time={time}
                 setTime={setTime}
                 setStatus={setStatus}
+                setScore={setScore}
               />
             </>
           )}
@@ -122,7 +127,7 @@ function Home() {
         </div>
       </nav>
 
-      <main className='flex flex-col justify-between'>
+      <main className='flex flex-col justify-between '>
         {status === 'initial' && <ItemsGame dificult={dificult} />}
         {status === 'playing' && (
           <div
@@ -137,7 +142,7 @@ function Home() {
           </div>
         )}
       </main>
-      <footer>
+      <footer className=''>
         {status === 'initial' && (
           <div className=''>
             <button
@@ -170,15 +175,18 @@ function Home() {
           <div className='flex flex-col items-center justify-center text-3xl font-bold text-white sm:gap-20 '>
             <button
               className='px-3 py-1 text-sm font-medium text-black delay-150 bg-yellow-300 rounded-md sm:py-2 sm:px-6 hover:scale-105 hover:bg-yellow-400'
-              onClick={handlePlay}
+              onClick={() => {
+                setScore(0)
+                handlePlay()
+              }}
             >
               Volver a jugar
             </button>
           </div>
         )}
       </footer>
-    </div>
+    </section>
   )
 }
 
-export default Home
+export default ColorPage
