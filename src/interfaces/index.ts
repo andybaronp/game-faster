@@ -19,7 +19,6 @@ export interface PointsDificult {
 export interface PropsTimer {
   status: 'initial' | 'playing' | 'finish'
   time: number
-  dificult: 'normal' | 'medium' | 'hard'
   setTime: React.Dispatch<React.SetStateAction<number>>
   setStatus: React.Dispatch<
     React.SetStateAction<'initial' | 'playing' | 'finish'>
@@ -28,8 +27,6 @@ export interface PropsTimer {
 }
 
 export interface GameFunctions {
-  dificult: 'normal' | 'medium' | 'hard'
-
   setTime: React.Dispatch<React.SetStateAction<number>>
   setStatus: React.Dispatch<
     React.SetStateAction<'initial' | 'playing' | 'finish'>

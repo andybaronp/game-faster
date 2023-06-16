@@ -98,7 +98,6 @@ function ColorPage() {
             <>
               <Score score={score} key={score} />
               <Timer
-                dificult={dificult}
                 viewConfetti={viewConfetti}
                 status={status}
                 time={time}

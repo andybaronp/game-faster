@@ -5,9 +5,8 @@ export const finishGame = ({
   setStatus,
   setTime,
   viewConfetti,
-  dificult,
 }: GameFunctions): void => {
   setStatus('finish')
-  setTime(timeDificult[dificult])
+  setTime(timeDificult['normal'])
   viewConfetti()
 }
