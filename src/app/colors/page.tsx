@@ -27,7 +27,7 @@ function ColorPage() {
   const [status, setStatus] = useState<'initial' | 'playing' | 'finish'>(
     'initial',
   )
-  const name = localStorage.getItem('name')
+  const name = 'player'
   const [dificult, setDificult] = useState<'normal' | 'medium' | 'hard'>(
     'normal',
   )
