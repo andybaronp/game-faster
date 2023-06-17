@@ -59,7 +59,7 @@ function ColorPage() {
   if (hidden === '') return <ModalName setHidden={setHidden} hidden={hidden} />
 
   return (
-    <section className='flex flex-col items-center justify-between h-full p-3 '>
+    <section className='flex flex-col items-center justify-between w-full h-full p-3'>
       <div className='flex flex-col justify-between '>
         {status === 'initial' && <ItemsGame dificult={dificult} />}
         {status === 'playing' && (
