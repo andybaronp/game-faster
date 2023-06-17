@@ -1,9 +1,26 @@
+import { colorsDifult } from '@/utils/levelUtils'
+import Link from 'next/link'
+
 function Home() {
+  // crea un div con un h1 y centra el div
   return (
-    <>
-      {/* <Image src='logo.svg' alt='logo' width={100} height={100} /> */}
-      <h1>Seleciona para jugar</h1>
-    </>
+    <div className='flex items-center justify-center flex-grow'>
+      <div className='flex flex-col items-center justify-center w-full gap-3 p-5 text-center border border-yellow-300 rounded cursor-pointer hover:bg-yellow-400'>
+        <Link href='/colors'>
+          <p className='text-6xl font-semibold text-slate-800'>COLORES</p>
+          <div className='flex flex-wrap items-center justify-center w-full gap-2'>
+            {colorsDifult['normal'].map((color, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`${color.bgcolor} w-10 h-10 border border-gray-500 rounded`}
+                ></div>
+              )
+            })}
+          </div>
+        </Link>
+      </div>
+    </div>
   )
 }
 

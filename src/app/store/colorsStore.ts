@@ -38,8 +38,7 @@ export const useDificultStore = create<DificultStore>((set) => ({
 }))
 // Timer
 export const useTimeStore = create<TimeStore>((set) => ({
-  // time: timeDificult['normal'],
-  time: 123123,
+  time: timeDificult['normal'],
   upDateTime: (timeReset?: number) => {
     set((state) => ({
       time: timeReset !== undefined ? timeReset : state.time - 1,
