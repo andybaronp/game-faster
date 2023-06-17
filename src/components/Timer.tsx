@@ -1,29 +1,32 @@
 import { useEffect } from 'react'
 import { finishGame } from '../helpers/finishGame'
 import { PropsTimer } from '../interfaces'
+import {
+  useDificultStore,
+  useStatusStore,
+  useTimeStore,
+} from '@/app/store/colorsStore'
 
-const Timer = ({
-  status,
-  setTime,
-  time,
-  setStatus,
-  viewConfetti,
-}: PropsTimer) => {
+const Timer = ({ viewConfetti }: PropsTimer) => {
   //incremental time
+
+  const { status, upDateGameStatus } = useStatusStore()
+  const { dificult, upDateDificult } = useDificultStore()
+  const { time, upDateTime } = useTimeStore()
   useEffect(() => {
     if (time === 0) {
-      finishGame({ setTime, setStatus, viewConfetti })
+      finishGame({ upDateTime, upDateGameStatus, viewConfetti, dificult })
     }
     if (status === 'playing') {
       const interval = setInterval(() => {
-        setTime((tim) => tim - 1)
+        upDateTime()
       }, 1000)
 
       return () => {
         clearInterval(interval)
       }
     }
-  }, [status, setTime, setStatus, time, viewConfetti])
+  }, [status, , time, upDateTime, viewConfetti, upDateGameStatus, dificult])
 
   return <div>{time} segundos</div>
 }

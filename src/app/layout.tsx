@@ -15,8 +15,10 @@ export default function RootLayout({
     <html lang='es' className='h-full bg-slate-700'>
       <body className='w-full h-full dark:bg-slate-700'>
         <main className='container h-full p-5 mx-auto dark:bg-slate-700'>
-          {/* <Navbar /> */}
-          {children}
+          <div className='container flex flex-col items-center justify-between flex-grow h-full px-3 py-6 pb-24 mx-auto bg-slate-700 '>
+            <Navbar />
+            {children}
+          </div>
         </main>
       </body>
     </html>

@@ -17,21 +17,14 @@ export interface PointsDificult {
 }
 
 export interface PropsTimer {
-  status: 'initial' | 'playing' | 'finish'
-  time: number
-  setTime: React.Dispatch<React.SetStateAction<number>>
-  setStatus: React.Dispatch<
-    React.SetStateAction<'initial' | 'playing' | 'finish'>
-  >
   viewConfetti: () => void
 }
 
 export interface GameFunctions {
-  setTime: React.Dispatch<React.SetStateAction<number>>
-  setStatus: React.Dispatch<
-    React.SetStateAction<'initial' | 'playing' | 'finish'>
-  >
+  upDateTime: (timeReset?: number) => void
+  upDateGameStatus: (status: 'initial' | 'playing' | 'finish') => void
   viewConfetti: () => void
+  dificult: 'normal' | 'medium' | 'hard'
 }
 
 export interface Option {

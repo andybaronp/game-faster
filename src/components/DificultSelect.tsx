@@ -1,11 +1,25 @@
-import { options } from '../utils/levelUtils'
+import {
+  useDificultStore,
+  useScoreStore,
+  useStatusStore,
+  useTimeStore,
+} from '@/app/store/colorsStore'
+import { options, timeDificult } from '../utils/levelUtils'
 
-interface Props {
-  handleSelectChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
-  dificult: string
-  status: string
-}
-const DificultSelect = ({ handleSelectChange, dificult, status }: Props) => {
+const DificultSelect = () => {
+  const { status } = useStatusStore()
+  const { dificult, upDateDificult } = useDificultStore()
+  const { upDateTime } = useTimeStore()
+  const { upDateScore } = useScoreStore()
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value
+    if (value === 'normal' || value === 'medium' || value === 'hard') {
+      upDateDificult(value)
+      upDateTime(timeDificult[value])
+      upDateScore('reset')
+    }
+  }
   return (
     <select
       disabled={status === 'playing'}
