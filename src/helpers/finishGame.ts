@@ -2,11 +2,12 @@ import { timeDificult } from '@/utils/levelUtils'
 import { GameFunctions } from '../interfaces'
 
 export const finishGame = ({
-  setStatus,
-  setTime,
+  upDateTime,
+  upDateGameStatus,
   viewConfetti,
+  dificult,
 }: GameFunctions): void => {
-  setStatus('finish')
-  setTime(timeDificult['normal'])
+  upDateGameStatus('finish')
+  upDateTime(timeDificult[dificult])
   viewConfetti()
 }

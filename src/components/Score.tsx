@@ -1,7 +1,8 @@
-interface Props {
-  score: number
-}
-const Score = ({ score }: Props) => {
+import { useScoreStore } from '@/app/store/colorsStore'
+
+const Score = () => {
+  const { score } = useScoreStore()
+
   return <div>Puntos: {score}</div>
 }
 
