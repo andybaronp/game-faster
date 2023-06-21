@@ -57,7 +57,6 @@ const Navbar = () => {
 
   const handleSingIn = async () => {
     await singIn()
-    window.location.reload()
   }
   const handleOut = async () => {
     await singOut()
