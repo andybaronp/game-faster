@@ -9,8 +9,6 @@ import {
 } from '@/app/store/colorsStore'
 
 const Timer = ({ viewConfetti }: PropsTimer) => {
-  //incremental time
-
   const { status, upDateGameStatus } = useStatusStore()
   const { dificult } = useDificultStore()
   const { time, upDateTime } = useTimeStore()
@@ -36,7 +34,6 @@ const Timer = ({ viewConfetti }: PropsTimer) => {
     }
   }, [
     status,
-    ,
     time,
     upDateTime,
     viewConfetti,

@@ -28,6 +28,7 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@types/canvas-confetti": "^1.6.0"
+    "@types/canvas-confetti": "^1.6.0",
+    "encoding": "^0.1.13"
   }
 }

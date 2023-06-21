@@ -15,9 +15,9 @@ export const colorsDifult: ColorsDificult = {
 export const pointsDificult: PointsDificult = { normal: 1, medium: 2, hard: 2 }
 
 export const timeDificult: TimeDificult = {
-  normal: 25,
-  medium: 23,
-  hard: 20,
+  normal: 20,
+  medium: 18,
+  hard: 16,
 }
 
 export const options: Option[] = [

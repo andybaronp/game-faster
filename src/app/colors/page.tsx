@@ -1,13 +1,9 @@
 'use client'
-import DificultSelect from '@/components/DificultSelect'
 import ItemsGame from '@/components/ItemsGame'
-import ModalName from '@/components/ModalName'
 import Score from '@/components/Score'
-import Timer from '@/components/Timer'
 import { Color } from '@/interfaces'
-import { timeDificult, colorsDifult, pointsDificult } from '@/utils/levelUtils'
-import { useState, useEffect } from 'react'
-import confetti from 'canvas-confetti'
+import { colorsDifult, pointsDificult } from '@/utils/levelUtils'
+import { useState } from 'react'
 import {
   useDificultStore,
   useScoreStore,
@@ -18,9 +14,7 @@ function ColorPage() {
   const { score, upDateScore } = useScoreStore()
   const { status, upDateGameStatus } = useStatusStore()
   const { dificult } = useDificultStore()
-  const name = 'player'
 
-  const [hidden, setHidden] = useState<string>('hidden')
   const [color, setColor] = useState<Color | null>(null)
   const [colorsGaming, setColorsGaming] = useState<Color[]>([])
 
@@ -49,14 +43,6 @@ function ColorPage() {
       upDateScore(-pointsDificult[dificult])
     }
   }
-  // Evalua si hay un nombre de jugador
-  useEffect(() => {
-    if (name === null || name === undefined) {
-      setHidden('')
-    }
-  }, [name])
-
-  if (hidden === '') return <ModalName setHidden={setHidden} hidden={hidden} />
 
   return (
     <section className='flex flex-col items-center justify-between w-full h-full p-3 pt-40'>
