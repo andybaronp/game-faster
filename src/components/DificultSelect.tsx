@@ -23,7 +23,7 @@ const DificultSelect = () => {
   return (
     <select
       disabled={status === 'playing'}
-      className='w-full px-2 py-1 text-sm font-medium delay-150 bg-yellow-300 rounded-md outline-none cursor-pointer sm:px-6 sm:w-auto'
+      className='px-2 py-1 text-sm font-medium text-center delay-150 bg-yellow-300 rounded-md outline-none cursor-pointer w-44 sm:px-6 lg:w-auto'
       onChange={handleSelectChange}
       value={dificult}
     >
