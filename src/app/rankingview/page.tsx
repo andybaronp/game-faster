@@ -1,31 +1,9 @@
-const ranking = [
-  {
-    nombre: 'Juan',
-    dificultad: 'Facil',
-    puntaje: '100',
-  },
-  {
-    nombre: 'María',
-    dificultad: 'Difícil',
-    puntaje: '250',
-  },
-  {
-    nombre: 'Pedro',
-    dificultad: 'Medio',
-    puntaje: '180',
-  },
-  {
-    nombre: 'Ana',
-    dificultad: 'Medio',
-    puntaje: '150',
-  },
-  {
-    nombre: 'Luis',
-    dificultad: 'Facil',
-    puntaje: '80',
-  },
-]
-const RankingView = () => {
+interface Player {
+  name: string
+  dificult: string
+  score: number
+}
+const RankingView = async () => {
   return (
     <div className='w-full h-auto p-4 rounded-lg shadow-md bg-slate-600'>
       <h2 className='mb-4 text-2xl font-bold'>Ranking</h2>
@@ -38,14 +16,39 @@ const RankingView = () => {
           </tr>
         </thead>
         <tbody>
-          {ranking.map((player, index) => (
+          {[
+            {
+              'id': 9,
+              'created_at': '2023-06-21T18:37:33.871666+00:00',
+              'name': 'ANDYS',
+              'score': 1212,
+              'dificult': 'normal',
+              'email': '1212@gmail.com',
+            },
+            {
+              'id': 1,
+              'created_at': '2023-06-21T13:49:27.928013+00:00',
+              'name': 'Jhoandris Baron',
+              'score': 8,
+              'dificult': 'hard',
+              'email': 'andybaronp@gmail.com',
+            },
+          ].map((player: Player, index: number) => (
             <tr
               key={index}
               className={index % 2 === 0 ? 'bg-gray-400' : 'bg-slate-500'}
             >
-              <td className='px-4 py-2 text-center'>{player.nombre}</td>
-              <td className='px-4 py-2 text-center'>{player.dificultad}</td>
-              <td className='px-4 py-2 text-center'>{player.puntaje}</td>
+              <td className='px-4 py-2 text-center'>{player.name}</td>
+              <td className='px-4 py-2 text-center'>{player.dificult}</td>
+              <td className='px-4 py-2 text-center'>
+                {index === 0
+                  ? `${player.score} 👽`
+                  : index === 1
+                  ? `${player.score} 👾`
+                  : index === 1
+                  ? `${player.score} 🤖`
+                  : player.score}
+              </td>
             </tr>
           ))}
         </tbody>

@@ -25,6 +25,7 @@ export interface GameFunctions {
   upDateGameStatus: (status: 'initial' | 'playing' | 'finish') => void
   viewConfetti: () => void
   dificult: 'normal' | 'medium' | 'hard'
+  score: number
 }
 
 export interface Option {
