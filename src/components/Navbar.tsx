@@ -14,7 +14,6 @@ import confetti from 'canvas-confetti'
 import Image from 'next/image'
 import { User } from '@supabase/supabase-js'
 import { getSessionSb, singIn, singOut } from '@/app/auth'
-import { usePathname, useRouter } from 'next/navigation'
 import { timeDificult } from '@/utils/levelUtils'
 
 const viewConfetti = () => {
@@ -32,8 +31,6 @@ const viewConfetti = () => {
 }
 
 const Navbar = () => {
-  const router = useRouter()
-  const pathname = usePathname()
   const { status, upDateGameStatus } = useStatusStore()
   const { upDateScore } = useScoreStore()
   const { upDateTime } = useTimeStore()
@@ -60,7 +57,7 @@ const Navbar = () => {
 
   const handleSingIn = async () => {
     await singIn()
-    router.push(pathname)
+    window.location.reload()
   }
   const handleOut = async () => {
     await singOut()
