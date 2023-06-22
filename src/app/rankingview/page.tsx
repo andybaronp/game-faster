@@ -20,18 +20,18 @@ const RankingView = async () => {
             {
               'id': 9,
               'created_at': '2023-06-21T18:37:33.871666+00:00',
-              'name': 'ANDYS',
-              'score': 1212,
+              'name': 'Joe ',
+              'score': 12,
               'dificult': 'normal',
-              'email': '1212@gmail.com',
+              'email': 'Joe@gmail.com',
             },
             {
               'id': 1,
               'created_at': '2023-06-21T13:49:27.928013+00:00',
-              'name': 'Jhoandris Baron',
+              'name': 'Jym Rolf',
               'score': 8,
               'dificult': 'hard',
-              'email': 'andybaronp@gmail.com',
+              'email': 'Jym@gmail.com',
             },
           ].map((player: Player, index: number) => (
             <tr

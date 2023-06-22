@@ -143,7 +143,12 @@ const Navbar = () => {
           </Link>
           <div
             className='relative text-center w-44 lg:w-auto'
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen)
+              upDateScore('reset')
+              upDateTime(timeDificult[dificult])
+              upDateGameStatus('initial')
+            }}
           >
             <Link href='/rankingview' passHref rel='preload'>
               <span className='absolute -right-2 -top-4 rotate-12'>🏆</span>
