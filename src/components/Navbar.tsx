@@ -42,26 +42,26 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-  useEffect(() => {
-    const getSession = async () => {
-      const { data } = await getSessionSb()
-      if (data.session) {
-        setName(data?.session?.user)
-        setIsession(true)
-      } else {
-        setIsession(false)
-      }
-    }
-    getSession()
-  }, [])
+  // useEffect(() => {
+  //   const getSession = async () => {
+  //     const { data } = await getSessionSb()
+  //     if (data.session) {
+  //       setName(data?.session?.user)
+  //       setIsession(true)
+  //     } else {
+  //       setIsession(false)
+  //     }
+  //   }
+  //   getSession()
+  // }, [])
 
-  const handleSingIn = async () => {
-    await singIn()
-  }
-  const handleOut = async () => {
-    await singOut()
-    window.location.reload()
-  }
+  // const handleSingIn = async () => {
+  //   await singIn()
+  // }
+  // const handleOut = async () => {
+  //   await singOut()
+  //   window.location.reload()
+  // }
 
   return (
     <nav className='flex flex-wrap items-center justify-between w-full gap-5 '>
@@ -158,7 +158,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {isSession ? (
+          {/* {isSession ? (
             <button
               onClick={() => handleOut()}
               className='px-2 py-1 text-sm font-medium text-yellow-500 rounded-md bg-slate-900 w-44 sm:px-4 hover:scale-105 hover:bg-yellow-400 hover:text-black lg:w-auto'
@@ -172,7 +172,7 @@ const Navbar = () => {
             >
               Iniciar sesión
             </button>
-          )}
+          )} */}
         </div>
       </div>
       {/* Score and timer */}
